@@ -17,6 +17,18 @@ def readfile():
     print(text)
     fileread.close()
 
+def addtext():
+    filename = input("Please enter the file name: ")
+    inputName = input("Please enter your name: ")
+    inputAge = input("Please enter your age: ")
+    inputAdress = input("Please enter your adress: ")
+    inputEmail = input("Please input your email: ")
+
+    filewrite = open(filename +".txt", "a")
+    filewrite.write("FileName: " + filename + "\nName: " + inputName + "\nAge: " + inputAge + "\nAdress: " + inputAdress + "\nEmail: " + inputEmail)
+    filewrite.close()
+
+
 while(True):
   print("""===== OOP Program =====
     1. Membuat file
@@ -36,8 +48,13 @@ while(True):
 
   elif(numbermenu == "3"):
 
-    writefile()
+    addtext()
     print("The file has been successfully saved")
+
+  elif(numbermenu == "4"):
+
+    print("Thank you for using this program :-)")
+    break
 
   else:
       print("Please enter the correct number!")
